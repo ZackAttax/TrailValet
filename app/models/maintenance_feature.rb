@@ -1,5 +1,6 @@
 class MaintenanceFeature < ApplicationRecord
   belongs_to :trail
+  belongs_to :user
   has_many :tools
-  has_many :user
+  #has_one :user
 end
