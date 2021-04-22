@@ -1,0 +1,2 @@
+class MaintenanceFeaturesController < ApplicationController
+end
