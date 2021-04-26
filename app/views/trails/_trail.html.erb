@@ -1,7 +1,9 @@
-<h2><%= trail.name %></h2>
-<h2><%= trail.location%></h2>
+
+<li><%= link_to trail.name, trail_path(trail) %></li>
+<%= trail.location%>
+    <ul>
     <% trail.maintenance_features.each do |mf| %>
-   <%= link_to  "#{mf.location} #{mf.issue} #{mf.tools_needed}", trail_maintenance_feature_path(mf.trail) %>
+   <li><%= link_to  "#{mf.attributes_string}", trail_maintenance_feature_path(mf.trail.id, mf) %></li>
     <%end%>
-    <br>
-    <%= link_to 'Create Maintenance or Feature', new_trail_maintenance_feature_path(trail) %> <br>
+    </ul>
+    <%= link_to 'Create Maintenance or Feature', new_trail_maintenance_feature_path(trail) %>

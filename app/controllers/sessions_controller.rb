@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    #binding.pry
     @user = User.find_by(email: params[:user][:email])
     if @user && @user.authenticate(params[:user][:password])
       flash[:message]= "You are sign in"
@@ -25,7 +24,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    binding.pry
     session.clear
     redirect_to login_path
   end

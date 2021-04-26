@@ -10,12 +10,12 @@ before_action :redirect_if_not_logged_in
     end
 
     def create
-        @trail = current_user.trails.build(trail_params)
+        @trail = Trail.new(trail_params)
         if @trail.save
             redirect_to trail_path(@trail)
         else
-            flash[:message] = "Please try to create trail again"
-            redirect_to new_trail_path
+            flash[:message] = @trail.errors.full_messages
+            render :new
         end
     end
 
