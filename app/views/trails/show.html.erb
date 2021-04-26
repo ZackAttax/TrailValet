@@ -1,9 +1,1 @@
-<h2><%= @trail.name %></h2>
-<h2><%= @trail.location%></h2>
-    <% @trail.maintenance_features.each do |mf| %>
-    <%= mf.location %>
-    <%= mf.issue %>
-    <%= mf.tools_needed %>
-    <%end%>
-    <br>
-    <%= link_to 'Create Maintenance or Feature', new_trail_maintenance_feature_path(@trail) %> <br>
+<%= render partial: 'trail', locals: {trail: @trail} %>

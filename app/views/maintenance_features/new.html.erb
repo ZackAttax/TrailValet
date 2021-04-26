@@ -1,12 +1,2 @@
-<%= form_for @maintenance_feature do |f| %>
-<%= f.label :location %>
-<%= f.text_field :location%> <br>
+<%= render partial: 'form', locals: {submit_button: "New Maintenance or Feature"}%>
 
-<%= f.label :issue %>
-<%= f.text_field :issue %> <br>
-
-<%= f.label :tools_needed %>
-<%= f.text_field :tools_needed%> <br>
-
-<%= f.submit 'Create Maintenance or Feature' %>
-<% end%>

@@ -5,6 +5,10 @@ before_action :redirect_if_not_logged_in
         @trail = Trail.new
     end
 
+    def index
+        @trails = Trail.all
+    end
+
     def create
         @trail = current_user.trails.build(trail_params)
         if @trail.save

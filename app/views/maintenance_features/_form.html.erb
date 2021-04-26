@@ -1,0 +1,12 @@
+<%= form_for maintenance_feature do |f| %>
+<%= f.label :location %>
+<%= f.text_field :location%> <br>
+
+<%= f.label :issue %>
+<%= f.text_field :issue %> <br>
+
+<%= f.label :tools_needed %>
+<%= f.text_field :tools_needed%> <br>
+<%= f.hidden_field :trail_id, value: @trail_id %>
+<%= f.submit "#{submit_button}" %>
+<% end%>
