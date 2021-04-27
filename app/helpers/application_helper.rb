@@ -13,7 +13,7 @@ module ApplicationHelper
     end
 
     def redirect_if_not_logged_in
-        redirect "/sessions/new" if !logged_in?
+        redirect_to login_path if !logged_in?
     
     end
 end

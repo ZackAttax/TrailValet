@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_22_185256) do
+ActiveRecord::Schema.define(version: 2021_04_27_181941) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -46,10 +46,8 @@ ActiveRecord::Schema.define(version: 2021_04_22_185256) do
   create_table "trails", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_trails_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,6 +57,8 @@ ActiveRecord::Schema.define(version: 2021_04_22_185256) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
+    t.string "uid"
   end
 
   add_foreign_key "comments", "maintenance_features"
@@ -66,5 +66,4 @@ ActiveRecord::Schema.define(version: 2021_04_22_185256) do
   add_foreign_key "maintenance_features", "trails"
   add_foreign_key "maintenance_features", "users"
   add_foreign_key "tools", "users"
-  add_foreign_key "trails", "users"
 end

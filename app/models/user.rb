@@ -5,4 +5,5 @@ class User < ApplicationRecord
     has_many :comments
     has_many :trails, through: :maintenance_features
     has_secure_password
+
 end
