@@ -7,4 +7,8 @@ module TrailsHelper
     def find_trail_by_id
         @trail = Trail.find_by_id(params[:id])
     end
+
+    def trail_error_messages
+        flash[:message] = @trail.errors.full_messages
+    end
 end

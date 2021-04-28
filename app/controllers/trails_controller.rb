@@ -14,7 +14,7 @@ before_action :redirect_if_not_logged_in
         if @trail.save
             redirect_to trail_path(@trail)
         else
-            flash[:message] = @trail.errors.full_messages
+            trail_error_messages
             render :new
         end
     end

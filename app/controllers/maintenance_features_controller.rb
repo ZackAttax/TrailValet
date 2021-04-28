@@ -11,6 +11,9 @@ include MaintenanceFeaturesHelper
         @maintenance_feature = current_user.maintenance_features.new(maintenance_feature_params)
         if @maintenance_feature.save
             redirect_to trail_path(@maintenance_feature.trail_id)
+        else
+            maintenance_feature_error_messages
+            render :new
         end
     end
     def show
@@ -24,12 +27,13 @@ include MaintenanceFeaturesHelper
     end
 
     def update
+        binding.pry
     @maintenance_feature = MaintenanceFeature.find_by(id: params[:id])
         @maintenance_feature.update(maintenance_feature_params)
         if @maintenance_feature.valid?
             redirect_to maintenance_feature_path(@maintenance_feature)
         else
-            #TODO: ERROR MESSAGES
+            maintenance_feature_error_messages
             render :edit
         end
     end

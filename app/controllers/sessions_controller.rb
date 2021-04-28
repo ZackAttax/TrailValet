@@ -17,7 +17,8 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       render :home
     else
-      flash
+      flash[:alert] = @user.error.full_messages
+    end
   end
   def create
     @user = User.find_by(email: params[:user][:email])
