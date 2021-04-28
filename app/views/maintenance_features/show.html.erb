@@ -1,4 +1,4 @@
 <%= link_to @maintenance_feature.trail_name, trail_path(@maintenance_feature.trail) %><br>
 <%= @maintenance_feature.attributes_string %><br>
-<%= link_to "New Maintenance or Feature for #{@maintenance_feature.trail_name}", new_trail_maintenance_feature_path(@maintenance_feature.trail) %><br>
 <%= link_to 'Edit or Delete this issue', edit_trail_maintenance_feature_path(@maintenance_feature) %><br>
+<%= link_to "New Maintenance or Feature for #{@maintenance_feature.trail_name}", new_trail_maintenance_feature_path(@maintenance_feature.trail) %><br>
