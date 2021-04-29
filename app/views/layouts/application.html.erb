@@ -14,7 +14,9 @@
 
   <body>
   <%= render 'layouts/nav' %>
+  <div class="text-warning">
   <%= flash[:message]%><br>
+  </div>
 <div class="mx-auto" style="width: 800px;">
   <%= yield %>
 </div>
