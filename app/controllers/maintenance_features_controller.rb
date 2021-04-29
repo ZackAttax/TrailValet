@@ -2,6 +2,10 @@ class MaintenanceFeaturesController < ApplicationController
 include MaintenanceFeaturesHelper
     before_action :redirect_if_not_logged_in
     
+    def index
+        @maintenance_feature_needs_attention = MaintenanceFeature.needs_attention
+        @maintenance_feature_task_completed = MaintenanceFeature.task_completed
+    end
     def new
         @trail_id = params[:trail_id]
         @maintenance_feature = MaintenanceFeature.new
@@ -13,7 +17,7 @@ include MaintenanceFeaturesHelper
             redirect_to trail_path(@maintenance_feature.trail_id)
         else
             maintenance_feature_error_messages
-            render :new
+            redirect_to new_trail_maintenance_feature_path(@maintenance_feature.trail_id)
         end
     end
     def show
@@ -27,14 +31,13 @@ include MaintenanceFeaturesHelper
     end
 
     def update
-        binding.pry
     @maintenance_feature = MaintenanceFeature.find_by(id: params[:id])
         @maintenance_feature.update(maintenance_feature_params)
         if @maintenance_feature.valid?
             redirect_to maintenance_feature_path(@maintenance_feature)
         else
             maintenance_feature_error_messages
-            render :edit
+            redirect_to edit_trail_maintenance_feature_path(@maintenance_feature)
         end
     end
 end

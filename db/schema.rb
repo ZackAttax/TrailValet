@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_27_181941) do
+ActiveRecord::Schema.define(version: 2021_04_29_194216) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_04_27_181941) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "task_completed", default: false
     t.index ["trail_id"], name: "index_maintenance_features_on_trail_id"
     t.index ["user_id"], name: "index_maintenance_features_on_user_id"
   end

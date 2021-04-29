@@ -3,6 +3,8 @@ class MaintenanceFeature < ApplicationRecord
   belongs_to :trail
   belongs_to :user
   has_many :tools
+  scope :needs_attention, -> { where(task_completed: false) }
+  scope :task_completed, -> { where(task_completed: true) }
   
 
   def trail_name
