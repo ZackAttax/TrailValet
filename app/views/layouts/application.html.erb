@@ -13,13 +13,15 @@
     
   </head>
 
-  <body style="background-color: #b7657b;">
+  <body style="background-color: #43070E;">
   
   <%= render 'layouts/nav' %>
-  <div class="text-warning" style="background-color: #e3f2fd;">
+  <% if flash[:message]%>
+  <div class="text-warning" style="background-color: #43070E;">
   <%= flash[:message]%><br>
   </div>
-<div class="mx-auto" style="width: 800px; background-color: #8f4f4f">
+  <%end%>
+<div class="mx-auto" style="width: 800px; background-color: #AE321D">
   <%= yield %>
 </div>
    

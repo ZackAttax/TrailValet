@@ -1,7 +1,7 @@
 module MaintenanceFeaturesHelper
     
     def maintenance_feature_params
-        params.require(:maintenance_feature).permit(:location, :issue, :tools_needed, :trail_id)
+        params.require(:maintenance_feature).permit(:location, :issue, :tools_needed, :trail_id, :task_completed)
     end
 
     def current_maintenance_feature

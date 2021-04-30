@@ -1,0 +1,22 @@
+.page-bg{
+    background-color: #43070E;
+}
+
+a:link {
+    color: #FEBE01;
+}
+/* A link that has been visited */
+a:visited {
+    color: #FEBE01;
+}
+/* A link that is hovered on */
+a:hover {
+    color: #FEBE01;
+}
+/* A link that is selected */
+a:active {
+    color: #FEBE01;
+}
+a {
+    color:  #FEBE01;
+}

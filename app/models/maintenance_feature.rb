@@ -11,7 +11,15 @@ class MaintenanceFeature < ApplicationRecord
     trail.name 
   end
   def attributes_string
-    "Location: #{location}, Issue: #{issue}, Tools Needed: #{tools_needed}"
+    "Location: #{location}, Issue: #{issue}, Tools Needed: #{tools_needed}, Task Status: #{task_status}"
+  end
+
+  def task_status
+    if task_completed
+      "Task Completed"
+    else
+      "Needs Attention"
+    end
   end
   
 
