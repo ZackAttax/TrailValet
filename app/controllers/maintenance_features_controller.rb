@@ -17,7 +17,7 @@ include MaintenanceFeaturesHelper
             redirect_to trail_path(@maintenance_feature.trail_id)
         else
             maintenance_feature_error_messages
-            redirect_to new_trail_maintenance_feature_path(@maintenance_feature.trail_id)
+            render :new
         end
     end
     def show
@@ -37,7 +37,7 @@ include MaintenanceFeaturesHelper
             redirect_to maintenance_feature_path(@maintenance_feature)
         else
             maintenance_feature_error_messages
-            redirect_to edit_trail_maintenance_feature_path(@maintenance_feature)
+            render :edit
         end
     end
 end
