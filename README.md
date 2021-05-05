@@ -1,25 +1,12 @@
 # README
-This is an app to track trail maintenance and features.
+Trail Valet is an app to track trail maintenance and features.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/zackattax/TrailValet. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
-* Ruby version
+License
+The app is available as open source under the terms of the MIT License.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Code of Conduct
+Everyone interacting in the bridge project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
