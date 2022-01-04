@@ -51,5 +51,5 @@ production:
   encoding: unicode
   database: trail_valet
   pool: 5
-  username: zacahrywilliams
+  username: zacharywilliams
   password:

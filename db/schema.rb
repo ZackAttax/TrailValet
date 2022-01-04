@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2021_04_29_194216) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.text "content"
-    t.integer "user_id", null: false
-    t.integer "maintenance_feature_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "maintenance_feature_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["maintenance_feature_id"], name: "index_comments_on_maintenance_feature_id"
@@ -26,8 +29,8 @@ ActiveRecord::Schema.define(version: 2021_04_29_194216) do
     t.string "location"
     t.string "issue"
     t.string "tools_needed"
-    t.integer "trail_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "trail_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "task_completed", default: false
@@ -38,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_04_29_194216) do
   create_table "tools", force: :cascade do |t|
     t.string "name"
     t.string "use"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_tools_on_user_id"

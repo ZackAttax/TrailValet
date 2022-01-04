@@ -157,6 +157,7 @@ GEM
     omniauth-strava (0.0.6)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.0)
+    pg (1.2.3)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -228,7 +229,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thin (1.8.1)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -277,6 +277,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-rails_csrf_protection
   omniauth-strava
+  pg
   pry
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
@@ -284,7 +285,6 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   spring
-  sqlite3 (~> 1.4)
   thin
   turbolinks (~> 5)
   tzinfo-data
