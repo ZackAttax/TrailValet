@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:user][:password])
       flash[:message]= "You are sign in"
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      render :home
     else
       flash[:message] = "Please try to login again"
       redirect_to login_path
