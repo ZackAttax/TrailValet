@@ -9,5 +9,5 @@
 <%= f.text_field :tools_needed%> <br>
 <%= f.select :task_completed, [["Task Completed", true], ["Needs Attention", false]]%><br>
 <%= f.hidden_field :trail_id, value: @trail_id %>
-<%= f.submit "#{submit_button}", :class => 'button'%>
+<%= f.submit "#{submit_button}", :class => 'button' %>
 <% end%>
